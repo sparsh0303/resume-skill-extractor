@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Skill Extractor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Resume Skill Extractor</h1>
+        </header>
+
+        <main>
+            <section class="upload-section">
+                <div class="upload-container" id="dropZone">
+                    <input type="file" id="fileInput" accept=".pdf" hidden>
+                    <div class="upload-content">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='48' height='48'%3E%3Cpath fill='%234A90E2' d='M19 13h-4v4h-2v-4H9v-2h4V7h2v4h4v2zm-7-7V4H5v16h14v-7h-2v5H7V6h5z'/%3E%3C/svg%3E" alt="Upload">
+                        <p>Drag & Drop PDF or <span class="browse-text">Browse</span></p>
+                    </div>
+                </div>
+                <div id="uploadProgress" class="progress-bar" hidden>
+                    <div class="progress"></div>
+                </div>
+            </section>
+
+            <section class="filter-section">
+                <div class="search-container">
+                    <input type="text" id="skillFilter" placeholder="Filter by skill...">
+                    <button id="filterButton">Filter</button>
+                </div>
+            </section>
+
+            <section class="results-section">
+                <h2>Extracted Resumes</h2>
+                <div id="resultsContainer" class="results-grid"></div>
+            </section>
+        </main>
+    </div>
+
+    <template id="resumeCardTemplate">
+        <div class="resume-card">
+            <div class="resume-header">
+                <h3 class="resume-name"></h3>
+                <span class="resume-date"></span>
+            </div>
+            <div class="resume-body">
+                <p class="resume-contact">
+                    <span class="email"></span>
+                    <span class="phone"></span>
+                </p>
+                <div class="skills-container">
+                    <h4>Skills</h4>
+                    <div class="skills-list"></div>
+                </div>
+                <div class="experience-container">
+                    <h4>Experience</h4>
+                    <p class="experience-text"></p>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="app.js"></script>
+</body>
+</html>
